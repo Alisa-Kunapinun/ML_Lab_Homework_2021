@@ -13137,7 +13137,7 @@ span.nbgrader-label {
   <div class="container">
     <div class="panel panel-default">
       <div class="panel-heading">
-        <h4>01-Linear-Regression (Score: 51.0 / 100.0)</h4>
+        <h4>01-Linear-Regression (Score: 71.0 / 100.0)</h4>
         <div id="toc">
           <ol>
           
@@ -13503,12 +13503,19 @@ span.nbgrader-label {
             <li><a href="#cell-fc743a8c603c95fb">Written response</a> (Score: 0.0 / 5.0)</li>
             
             
+            <li><a href="#comment-cell-fc743a8c603c95fb">Comment</a></li>
+            
           
             
             
           
             
-            <li><a href="#cell-54284c2d3a5a5544">Coding free-response</a> (Score: 0.0 / 35.0)</li>
+            <li><a href="#cell-54284c2d3a5a5544">Coding free-response</a> (Score: 20.0 / 35.0)</li>
+            
+            
+            <li><a href="#comment-cell-54284c2d3a5a5544">Comment</a></li>
+            
+          
             
             
           
@@ -16245,17 +16252,7 @@ gradient_per_iter [[ 0.00000000e+00 -1.72082220e-14  8.75724041e-16]\
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>0.7329450180289143</pre>
-</div>
-</div>
-
-<div class="output_area">
-
-    <div class="prompt"></div>
-
-
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>
+<pre>0.7329450180289143
 </pre>
 </div>
 </div>
@@ -16471,7 +16468,12 @@ How many data in your dataset?</p>
 
       </div>
     </div>
-    
+    <div class="panel-footer">
+  <div>
+    <b>Comments:</b> <p>No "Explain the dataset which you get and which rows which you use. How many data in your dataset?"</p>
+
+  </div>
+</div>
   </div></div>
 
 <div class="cell border-box-sizing text_cell rendered">
@@ -16488,7 +16490,7 @@ Show the results, goodness of fit and plot cost graph</p>
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[60]:</div><div class="panel panel-primary nbgrader_cell">
     <a name="comment-cell-54284c2d3a5a5544"></a><a name="cell-54284c2d3a5a5544"></a><div class="panel-heading"><span class="nbgrader-label">Student's answer</span><span class="pull-right">
-      Score: 0.0 / 35.0 <a href="#top">(Top)</a>
+      Score: 20.0 / 35.0 <a href="#top">(Top)</a>
   </span></div>
     <div class="panel-body">
       <div class="input_area">
@@ -16498,7 +16500,12 @@ Show the results, goodness of fit and plot cost graph</p>
 
       </div>
     </div>
-    
+    <div class="panel-footer">
+  <div>
+    <b>Comments:</b> <p>Cost function cannot be run, Gradient too. R_square  should be 0-1</p>
+
+  </div>
+</div>
   </div>
 </div>
 
@@ -16520,8 +16527,9 @@ Show the results, goodness of fit and plot cost graph</p>
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[62]:</div><div class="inner_cell">
     <div class="input_area">
-      <div class=" highlight hl-ipython3"><pre><span></span><span class="n">raw_data</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">genfromtxt</span><span class="p">(</span><span class="s1">&#39;Salary_Data.txt&#39;</span><span class="p">,</span> <span class="n">delimiter</span><span class="o">=</span><span class="s1">&#39;Tab&#39;</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="nb">str</span><span class="p">)</span>
-<span class="n">data</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">raw_data</span><span class="p">[</span><span class="mi">1</span><span class="p">:,:],</span> <span class="n">dtype</span><span class="o">=</span><span class="nb">float</span><span class="p">)</span>
+      <div class=" highlight hl-ipython3"><pre><span></span><span class="n">raw_data</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">genfromtxt</span><span class="p">(</span><span class="s1">&#39;Salary_Data.csv&#39;</span><span class="p">,</span> <span class="n">delimiter</span><span class="o">=</span><span class="s1">&#39;,&#39;</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="nb">str</span><span class="p">)</span>
+<span class="n">raw_data</span>
+<span class="c1"># data = np.array(raw_data[1:,:], dtype=float)</span>
 </pre></div>
 
     </div>
@@ -16534,19 +16542,45 @@ Show the results, goodness of fit and plot cost graph</p>
 
 <div class="output_area">
 
-    <div class="prompt"></div>
+    <div class="prompt output_prompt">Out[62]:</div>
 
 
-<div class="output_subarea output_text output_error">
-<pre>
-<span class="ansi-red-fg">---------------------------------------------------------------------------</span>
-<span class="ansi-red-fg">IndexError</span>                                Traceback (most recent call last)
-<span class="ansi-green-fg">&lt;ipython-input-62-c578bea52963&gt;</span> in <span class="ansi-cyan-fg">&lt;module&gt;</span>
-<span class="ansi-green-intense-fg ansi-bold">      1</span> raw_data <span class="ansi-blue-fg">=</span> np<span class="ansi-blue-fg">.</span>genfromtxt<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">&#39;Salary_Data.txt&#39;</span><span class="ansi-blue-fg">,</span> delimiter<span class="ansi-blue-fg">=</span><span class="ansi-blue-fg">&#39;Tab&#39;</span><span class="ansi-blue-fg">,</span> dtype<span class="ansi-blue-fg">=</span>str<span class="ansi-blue-fg">)</span>
-<span class="ansi-green-fg">----&gt; 2</span><span class="ansi-red-fg"> </span>data <span class="ansi-blue-fg">=</span> np<span class="ansi-blue-fg">.</span>array<span class="ansi-blue-fg">(</span>raw_data<span class="ansi-blue-fg">[</span><span class="ansi-cyan-fg">1</span><span class="ansi-blue-fg">:</span><span class="ansi-blue-fg">,</span><span class="ansi-blue-fg">:</span><span class="ansi-blue-fg">]</span><span class="ansi-blue-fg">,</span> dtype<span class="ansi-blue-fg">=</span>float<span class="ansi-blue-fg">)</span>
 
-<span class="ansi-red-fg">IndexError</span>: too many indices for array: array is 1-dimensional, but 2 were indexed</pre>
+
+<div class="output_text output_subarea output_execute_result">
+<pre>array([[&#39;YearsExperience&#39;, &#39;Salary&#39;],
+       [&#39;1.1&#39;, &#39;39343.00&#39;],
+       [&#39;1.3&#39;, &#39;46205.00&#39;],
+       [&#39;1.5&#39;, &#39;37731.00&#39;],
+       [&#39;2.0&#39;, &#39;43525.00&#39;],
+       [&#39;2.2&#39;, &#39;39891.00&#39;],
+       [&#39;2.9&#39;, &#39;56642.00&#39;],
+       [&#39;3.0&#39;, &#39;60150.00&#39;],
+       [&#39;3.2&#39;, &#39;54445.00&#39;],
+       [&#39;3.2&#39;, &#39;64445.00&#39;],
+       [&#39;3.7&#39;, &#39;57189.00&#39;],
+       [&#39;3.9&#39;, &#39;63218.00&#39;],
+       [&#39;4.0&#39;, &#39;55794.00&#39;],
+       [&#39;4.0&#39;, &#39;56957.00&#39;],
+       [&#39;4.1&#39;, &#39;57081.00&#39;],
+       [&#39;4.5&#39;, &#39;61111.00&#39;],
+       [&#39;4.9&#39;, &#39;67938.00&#39;],
+       [&#39;5.1&#39;, &#39;66029.00&#39;],
+       [&#39;5.3&#39;, &#39;83088.00&#39;],
+       [&#39;5.9&#39;, &#39;81363.00&#39;],
+       [&#39;6.0&#39;, &#39;93940.00&#39;],
+       [&#39;6.8&#39;, &#39;91738.00&#39;],
+       [&#39;7.1&#39;, &#39;98273.00&#39;],
+       [&#39;7.9&#39;, &#39;101302.00&#39;],
+       [&#39;8.2&#39;, &#39;113812.00&#39;],
+       [&#39;8.7&#39;, &#39;109431.00&#39;],
+       [&#39;9.0&#39;, &#39;105582.00&#39;],
+       [&#39;9.5&#39;, &#39;116969.00&#39;],
+       [&#39;9.6&#39;, &#39;112635.00&#39;],
+       [&#39;10.3&#39;, &#39;122391.00&#39;],
+       [&#39;10.5&#39;, &#39;121872.00&#39;]], dtype=&#39;&lt;U15&#39;)</pre>
 </div>
+
 </div>
 
 </div>
@@ -16556,49 +16590,6 @@ Show the results, goodness of fit and plot cost graph</p>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[63]:</div><div class="inner_cell">
-    <div class="input_area">
-      <div class=" highlight hl-ipython3"><pre><span></span><span class="n">headers</span> <span class="o">=</span> <span class="n">raw_data</span><span class="p">[</span><span class="mi">0</span><span class="p">,:]</span>
-<span class="n">y_label</span> <span class="o">=</span> <span class="s1">&#39;Salary&#39;</span>
-<span class="n">y_index</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">headers</span> <span class="o">==</span> <span class="n">y_label</span><span class="p">)[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span>
-<span class="n">y_index</span>
-<span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">data_norm</span><span class="p">[:,</span><span class="n">y_index</span><span class="p">]])</span><span class="o">.</span><span class="n">T</span><span class="o">.</span><span class="n">flatten</span><span class="p">()</span>
-</pre></div>
-
-    </div>
-  </div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt"></div>
-
-
-<div class="output_subarea output_text output_error">
-<pre>
-<span class="ansi-red-fg">---------------------------------------------------------------------------</span>
-<span class="ansi-red-fg">IndexError</span>                                Traceback (most recent call last)
-<span class="ansi-green-fg">&lt;ipython-input-63-45ef682e5743&gt;</span> in <span class="ansi-cyan-fg">&lt;module&gt;</span>
-<span class="ansi-green-fg">----&gt; 1</span><span class="ansi-red-fg"> </span>headers <span class="ansi-blue-fg">=</span> raw_data<span class="ansi-blue-fg">[</span><span class="ansi-cyan-fg">0</span><span class="ansi-blue-fg">,</span><span class="ansi-blue-fg">:</span><span class="ansi-blue-fg">]</span>
-<span class="ansi-green-intense-fg ansi-bold">      2</span> y_label <span class="ansi-blue-fg">=</span> <span class="ansi-blue-fg">&#39;Salary&#39;</span>
-<span class="ansi-green-intense-fg ansi-bold">      3</span> y_index <span class="ansi-blue-fg">=</span> np<span class="ansi-blue-fg">.</span>where<span class="ansi-blue-fg">(</span>headers <span class="ansi-blue-fg">==</span> y_label<span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">[</span><span class="ansi-cyan-fg">0</span><span class="ansi-blue-fg">]</span><span class="ansi-blue-fg">[</span><span class="ansi-cyan-fg">0</span><span class="ansi-blue-fg">]</span>
-<span class="ansi-green-intense-fg ansi-bold">      4</span> y_index
-<span class="ansi-green-intense-fg ansi-bold">      5</span> y <span class="ansi-blue-fg">=</span> np<span class="ansi-blue-fg">.</span>array<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">[</span>data_norm<span class="ansi-blue-fg">[</span><span class="ansi-blue-fg">:</span><span class="ansi-blue-fg">,</span>y_index<span class="ansi-blue-fg">]</span><span class="ansi-blue-fg">]</span><span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">.</span>T<span class="ansi-blue-fg">.</span>flatten<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">)</span>
-
-<span class="ansi-red-fg">IndexError</span>: too many indices for array: array is 1-dimensional, but 2 were indexed</pre>
-</div>
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[64]:</div><div class="inner_cell">
     <div class="input_area">
       <div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">normalized_data</span><span class="p">(</span><span class="n">data</span><span class="p">):</span>
     <span class="n">means</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
@@ -16614,7 +16605,7 @@ Show the results, goodness of fit and plot cost graph</p>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[65]:</div><div class="inner_cell">
+<div class="prompt input_prompt">In&nbsp;[64]:</div><div class="inner_cell">
     <div class="input_area">
       <div class=" highlight hl-ipython3"><pre><span></span><span class="n">data_norm</span> <span class="o">=</span> <span class="n">normalized_data</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
 </pre></div>
@@ -16626,7 +16617,7 @@ Show the results, goodness of fit and plot cost graph</p>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[66]:</div><div class="inner_cell">
+<div class="prompt input_prompt">In&nbsp;[65]:</div><div class="inner_cell">
     <div class="input_area">
       <div class=" highlight hl-ipython3"><pre><span></span><span class="n">X</span> <span class="o">=</span> <span class="n">data_norm</span><span class="p">[:,</span><span class="mi">0</span><span class="p">:</span><span class="n">y_index</span><span class="p">]</span>
 <span class="n">X</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
@@ -16639,10 +16630,29 @@ Show the results, goodness of fit and plot cost graph</p>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
+<div class="prompt input_prompt">In&nbsp;[66]:</div><div class="inner_cell">
+    <div class="input_area">
+      <div class=" highlight hl-ipython3"><pre><span></span><span class="n">headers</span> <span class="o">=</span> <span class="n">raw_data</span><span class="p">[</span><span class="mi">0</span><span class="p">,:]</span>
+<span class="n">y_label</span> <span class="o">=</span> <span class="s1">&#39;Salary&#39;</span>
+<span class="n">y_index</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">headers</span> <span class="o">==</span> <span class="n">y_label</span><span class="p">)[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span>
+<span class="n">y_index</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">data_norm</span><span class="p">[:,</span><span class="n">y_index</span><span class="p">]])</span><span class="o">.</span><span class="n">T</span>
+</pre></div>
+
+    </div>
+  </div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
 <div class="prompt input_prompt">In&nbsp;[67]:</div><div class="inner_cell">
     <div class="input_area">
       <div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">h</span><span class="p">(</span><span class="n">X</span><span class="p">,</span><span class="n">theta</span><span class="p">):</span>
+    <span class="c1">#print(X.shape)</span>
+    <span class="c1">#print(theta.shape)</span>
     <span class="n">y_predicted</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">theta</span><span class="p">)</span>
+    
     <span class="k">return</span> <span class="n">y_predicted</span>
 </pre></div>
 
@@ -16656,7 +16666,7 @@ Show the results, goodness of fit and plot cost graph</p>
 <div class="prompt input_prompt">In&nbsp;[68]:</div><div class="inner_cell">
     <div class="input_area">
       <div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">cost</span><span class="p">(</span><span class="n">theta</span><span class="p">,</span> <span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
-    <span class="n">dy</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">subtract</span><span class="p">(</span><span class="n">h</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">theta</span><span class="p">),</span><span class="n">y</span><span class="p">)</span>
+    <span class="n">dy</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">subtract</span><span class="p">(</span><span class="n">h</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">theta</span><span class="p">),</span><span class="n">y</span><span class="o">.</span><span class="n">flatten</span><span class="p">())</span>
     <span class="n">J</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">dy</span><span class="o">.</span><span class="n">T</span><span class="p">,</span> <span class="n">dy</span><span class="p">)</span> <span class="o">/</span> <span class="mi">2</span>
     <span class="k">return</span> <span class="n">J</span>
 </pre></div>
@@ -16670,7 +16680,7 @@ Show the results, goodness of fit and plot cost graph</p>
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[69]:</div><div class="inner_cell">
     <div class="input_area">
-      <div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">cost</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span> <span class="mi">10</span><span class="p">]),</span> <span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">))</span>
+      <div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">cost</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">10</span><span class="p">]),</span> <span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">))</span>
 </pre></div>
 
     </div>
@@ -16686,9 +16696,29 @@ Show the results, goodness of fit and plot cost graph</p>
     <div class="prompt"></div>
 
 
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>3457.1379516808365
-</pre>
+<div class="output_subarea output_text output_error">
+<pre>
+<span class="ansi-red-fg">---------------------------------------------------------------------------</span>
+<span class="ansi-red-fg">ValueError</span>                                Traceback (most recent call last)
+<span class="ansi-green-fg">&lt;ipython-input-69-bb77f1de3905&gt;</span> in <span class="ansi-cyan-fg">&lt;module&gt;</span>
+<span class="ansi-green-fg">----&gt; 1</span><span class="ansi-red-fg"> </span>print<span class="ansi-blue-fg">(</span>cost<span class="ansi-blue-fg">(</span>np<span class="ansi-blue-fg">.</span>array<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">[</span><span class="ansi-cyan-fg">1</span><span class="ansi-blue-fg">,</span><span class="ansi-cyan-fg">10</span><span class="ansi-blue-fg">]</span><span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">,</span> X<span class="ansi-blue-fg">,</span> y<span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">)</span>
+
+<span class="ansi-green-fg">&lt;ipython-input-68-761266c50aab&gt;</span> in <span class="ansi-cyan-fg">cost</span><span class="ansi-blue-fg">(theta, X, y)</span>
+<span class="ansi-green-intense-fg ansi-bold">      1</span> <span class="ansi-green-fg">def</span> cost<span class="ansi-blue-fg">(</span>theta<span class="ansi-blue-fg">,</span> X<span class="ansi-blue-fg">,</span> y<span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">:</span>
+<span class="ansi-green-fg">----&gt; 2</span><span class="ansi-red-fg">     </span>dy <span class="ansi-blue-fg">=</span> np<span class="ansi-blue-fg">.</span>subtract<span class="ansi-blue-fg">(</span>h<span class="ansi-blue-fg">(</span>X<span class="ansi-blue-fg">,</span> theta<span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">,</span>y<span class="ansi-blue-fg">.</span>flatten<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">)</span>
+<span class="ansi-green-intense-fg ansi-bold">      3</span>     J <span class="ansi-blue-fg">=</span> np<span class="ansi-blue-fg">.</span>dot<span class="ansi-blue-fg">(</span>dy<span class="ansi-blue-fg">.</span>T<span class="ansi-blue-fg">,</span> dy<span class="ansi-blue-fg">)</span> <span class="ansi-blue-fg">/</span> <span class="ansi-cyan-fg">2</span>
+<span class="ansi-green-intense-fg ansi-bold">      4</span>     <span class="ansi-green-fg">return</span> J
+
+<span class="ansi-green-fg">&lt;ipython-input-67-6f892cefd793&gt;</span> in <span class="ansi-cyan-fg">h</span><span class="ansi-blue-fg">(X, theta)</span>
+<span class="ansi-green-intense-fg ansi-bold">      2</span>     <span class="ansi-red-fg">#print(X.shape)</span>
+<span class="ansi-green-intense-fg ansi-bold">      3</span>     <span class="ansi-red-fg">#print(theta.shape)</span>
+<span class="ansi-green-fg">----&gt; 4</span><span class="ansi-red-fg">     </span>y_predicted <span class="ansi-blue-fg">=</span> np<span class="ansi-blue-fg">.</span>dot<span class="ansi-blue-fg">(</span>X<span class="ansi-blue-fg">,</span> theta<span class="ansi-blue-fg">)</span>
+<span class="ansi-green-intense-fg ansi-bold">      5</span> 
+<span class="ansi-green-intense-fg ansi-bold">      6</span>     <span class="ansi-green-fg">return</span> y_predicted
+
+<span class="ansi-green-fg">&lt;__array_function__ internals&gt;</span> in <span class="ansi-cyan-fg">dot</span><span class="ansi-blue-fg">(*args, **kwargs)</span>
+
+<span class="ansi-red-fg">ValueError</span>: shapes (47,3) and (2,) not aligned: 3 (dim 1) != 2 (dim 0)</pre>
 </div>
 </div>
 
@@ -16701,7 +16731,7 @@ Show the results, goodness of fit and plot cost graph</p>
 <div class="prompt input_prompt">In&nbsp;[70]:</div><div class="inner_cell">
     <div class="input_area">
       <div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">gradient</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">theta</span><span class="p">):</span>
-    <span class="n">grad</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">X</span><span class="o">.</span><span class="n">T</span><span class="p">,</span> <span class="p">(</span><span class="n">h</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">theta</span><span class="p">)</span><span class="o">-</span><span class="n">y</span><span class="p">))</span>
+    <span class="n">grad</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">X</span><span class="o">.</span><span class="n">T</span><span class="p">,</span> <span class="p">(</span><span class="n">h</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">theta</span><span class="p">)</span><span class="o">-</span><span class="n">y</span><span class="o">.</span><span class="n">flatten</span><span class="p">()))</span>
     <span class="k">return</span> <span class="n">grad</span>
 </pre></div>
 
@@ -16721,6 +16751,8 @@ Show the results, goodness of fit and plot cost graph</p>
     <span class="n">theta</span> <span class="o">=</span> <span class="n">theta_initial</span>
     <span class="k">for</span> <span class="nb">iter</span> <span class="ow">in</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="n">num_iters</span><span class="p">):</span>
         <span class="n">grad</span> <span class="o">=</span><span class="n">gradient</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">theta</span><span class="p">)</span>
+        <span class="c1">#print(theta.shape)</span>
+        <span class="c1">#print(grad.shape)</span>
         <span class="n">theta</span> <span class="o">=</span> <span class="n">theta</span> <span class="o">-</span> <span class="n">alpha</span> <span class="o">*</span> <span class="n">grad</span>
         
         <span class="n">J_per_iter</span><span class="p">[</span><span class="nb">iter</span><span class="p">]</span> <span class="o">=</span> <span class="n">cost</span><span class="p">(</span><span class="n">theta</span><span class="p">,</span> <span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
@@ -16737,11 +16769,55 @@ Show the results, goodness of fit and plot cost graph</p>
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[72]:</div><div class="inner_cell">
     <div class="input_area">
-      <div class=" highlight hl-ipython3"><pre><span></span><span class="p">(</span><span class="n">theta</span><span class="p">,</span> <span class="n">J_per_iter</span><span class="p">,</span> <span class="n">gradient_per_iter</span><span class="p">)</span> <span class="o">=</span> <span class="n">gradient_descent</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">10</span><span class="p">]),</span> <span class="mf">0.001</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>
+      <div class=" highlight hl-ipython3"><pre><span></span><span class="p">(</span><span class="n">theta</span><span class="p">,</span> <span class="n">J_per_iter</span><span class="p">,</span> <span class="n">gradient_per_iter</span><span class="p">)</span> <span class="o">=</span> <span class="n">gradient_descent</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">10</span><span class="p">]),</span> <span class="mf">0.001</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>
 </pre></div>
 
     </div>
   </div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_text output_error">
+<pre>
+<span class="ansi-red-fg">---------------------------------------------------------------------------</span>
+<span class="ansi-red-fg">ValueError</span>                                Traceback (most recent call last)
+<span class="ansi-green-fg">&lt;ipython-input-72-0a2b4599db7b&gt;</span> in <span class="ansi-cyan-fg">&lt;module&gt;</span>
+<span class="ansi-green-fg">----&gt; 1</span><span class="ansi-red-fg"> </span><span class="ansi-blue-fg">(</span>theta<span class="ansi-blue-fg">,</span> J_per_iter<span class="ansi-blue-fg">,</span> gradient_per_iter<span class="ansi-blue-fg">)</span> <span class="ansi-blue-fg">=</span> gradient_descent<span class="ansi-blue-fg">(</span>X<span class="ansi-blue-fg">,</span> y<span class="ansi-blue-fg">,</span> np<span class="ansi-blue-fg">.</span>array<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">[</span><span class="ansi-cyan-fg">0</span><span class="ansi-blue-fg">,</span> <span class="ansi-cyan-fg">10</span><span class="ansi-blue-fg">]</span><span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">,</span> <span class="ansi-cyan-fg">0.001</span><span class="ansi-blue-fg">,</span> <span class="ansi-cyan-fg">10</span><span class="ansi-blue-fg">)</span>
+
+<span class="ansi-green-fg">&lt;ipython-input-71-3cfab2852eaf&gt;</span> in <span class="ansi-cyan-fg">gradient_descent</span><span class="ansi-blue-fg">(X, y, theta_initial, alpha, num_iters)</span>
+<span class="ansi-green-intense-fg ansi-bold">      5</span>     theta <span class="ansi-blue-fg">=</span> theta_initial
+<span class="ansi-green-intense-fg ansi-bold">      6</span>     <span class="ansi-green-fg">for</span> iter <span class="ansi-green-fg">in</span> np<span class="ansi-blue-fg">.</span>arange<span class="ansi-blue-fg">(</span>num_iters<span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">:</span>
+<span class="ansi-green-fg">----&gt; 7</span><span class="ansi-red-fg">         </span>grad <span class="ansi-blue-fg">=</span>gradient<span class="ansi-blue-fg">(</span>X<span class="ansi-blue-fg">,</span> y<span class="ansi-blue-fg">,</span> theta<span class="ansi-blue-fg">)</span>
+<span class="ansi-green-intense-fg ansi-bold">      8</span>         <span class="ansi-red-fg">#print(theta.shape)</span>
+<span class="ansi-green-intense-fg ansi-bold">      9</span>         <span class="ansi-red-fg">#print(grad.shape)</span>
+
+<span class="ansi-green-fg">&lt;ipython-input-70-a2ba651afe94&gt;</span> in <span class="ansi-cyan-fg">gradient</span><span class="ansi-blue-fg">(X, y, theta)</span>
+<span class="ansi-green-intense-fg ansi-bold">      1</span> <span class="ansi-green-fg">def</span> gradient<span class="ansi-blue-fg">(</span>X<span class="ansi-blue-fg">,</span> y<span class="ansi-blue-fg">,</span> theta<span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">:</span>
+<span class="ansi-green-fg">----&gt; 2</span><span class="ansi-red-fg">     </span>grad <span class="ansi-blue-fg">=</span> np<span class="ansi-blue-fg">.</span>dot<span class="ansi-blue-fg">(</span>X<span class="ansi-blue-fg">.</span>T<span class="ansi-blue-fg">,</span> <span class="ansi-blue-fg">(</span>h<span class="ansi-blue-fg">(</span>X<span class="ansi-blue-fg">,</span> theta<span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">-</span>y<span class="ansi-blue-fg">.</span>flatten<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">)</span>
+<span class="ansi-green-intense-fg ansi-bold">      3</span>     <span class="ansi-green-fg">return</span> grad
+
+<span class="ansi-green-fg">&lt;ipython-input-67-6f892cefd793&gt;</span> in <span class="ansi-cyan-fg">h</span><span class="ansi-blue-fg">(X, theta)</span>
+<span class="ansi-green-intense-fg ansi-bold">      2</span>     <span class="ansi-red-fg">#print(X.shape)</span>
+<span class="ansi-green-intense-fg ansi-bold">      3</span>     <span class="ansi-red-fg">#print(theta.shape)</span>
+<span class="ansi-green-fg">----&gt; 4</span><span class="ansi-red-fg">     </span>y_predicted <span class="ansi-blue-fg">=</span> np<span class="ansi-blue-fg">.</span>dot<span class="ansi-blue-fg">(</span>X<span class="ansi-blue-fg">,</span> theta<span class="ansi-blue-fg">)</span>
+<span class="ansi-green-intense-fg ansi-bold">      5</span> 
+<span class="ansi-green-intense-fg ansi-bold">      6</span>     <span class="ansi-green-fg">return</span> y_predicted
+
+<span class="ansi-green-fg">&lt;__array_function__ internals&gt;</span> in <span class="ansi-cyan-fg">dot</span><span class="ansi-blue-fg">(*args, **kwargs)</span>
+
+<span class="ansi-red-fg">ValueError</span>: shapes (47,3) and (2,) not aligned: 3 (dim 1) != 2 (dim 0)</pre>
+</div>
+</div>
+
+</div>
 </div>
 
 </div>
@@ -16751,7 +16827,7 @@ Show the results, goodness of fit and plot cost graph</p>
     <div class="input_area">
       <div class=" highlight hl-ipython3"><pre><span></span><span class="n">theta_initial</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="n">X</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]))</span>
 <span class="n">alpha</span> <span class="o">=</span> <span class="mf">0.003</span>
-<span class="n">iterations</span> <span class="o">=</span> <span class="mi">30000</span>
+<span class="n">iterations</span> <span class="o">=</span> <span class="mi">100</span>
 <span class="n">theta</span><span class="p">,</span> <span class="n">costs</span><span class="p">,</span> <span class="n">grad</span> <span class="o">=</span> <span class="n">gradient_descent</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">theta_initial</span><span class="p">,</span> <span class="n">alpha</span><span class="p">,</span> <span class="n">iterations</span><span class="p">)</span>
 </pre></div>
 
@@ -16797,7 +16873,7 @@ Show the results, goodness of fit and plot cost graph</p>
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>0.7329450180289143
+<pre>-92.96584600125148
 </pre>
 </div>
 </div>
@@ -16837,7 +16913,7 @@ Show the results, goodness of fit and plot cost graph</p>
 
 
 <div class="output_png output_subarea ">
-<img src="data:image/png;base64,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
+<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAX4AAAEGCAYAAABiq/5QAAAAOXRFWHRTb2Z0d2FyZQBNYXRwbG90bGliIHZlcnNpb24zLjMuNCwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy8QVMy6AAAACXBIWXMAAAsTAAALEwEAmpwYAAAZj0lEQVR4nO3deZBd5X3m8e8jtZDQgiTcjViEFg8ggkESpPGwOB5sKVh2KJMET4CxWWwSjZ3E4JXCZspTrlSlYEwc2xWHiQIEbCgRG7ChMIMwiyMTszVCSAKxGiPEphar2LSg3/zxnuu+arqlVqvPOdJ9n0/VqXvvuUf3/R0O9fR733vOexQRmJlZPobVXYCZmVXLwW9mlhkHv5lZZhz8ZmaZcfCbmWWmre4CBqK9vT2mTZtWdxlmZruU+++/f21EdPRev0sE/7Rp0+jq6qq7DDOzXYqkp/ta76EeM7PMlBb8ki6TtEbSil7rvyjpEUkPSfo/ZbVvZmZ9K7PHfzkwr3mFpI8AJwKzIuIDwEUltm9mZn0oLfgjYjHwcq/VXwAuiIj1xTZrymrfzMz6VvUY/0HAH0m6R9J/SDqyvw0lzZfUJamru7u7whLNzFpb1cHfBuwJHAV8HfiJJPW1YUQsiIjOiOjs6HjP2UhmZjZIVQf/auC6SO4FNgPtFddgZpa1qoP/58BHACQdBOwGrC2rsRtvhAsvLOvTzcx2TWWezrkQuAuYIWm1pLOAy4D3F6d4Xg2cESXeEGDRIge/mVlvpV25GxGn9vPWZ8pqs7dx42DdOoiAvn9JMDPLT0tfuTtuHGzaBOvX112JmdnOo+WDH+CNN+qtw8xsZ9LSwT92bHpct67eOszMdiYtHfyNHr+D38ysh4PfzCwzLR38jaEej/GbmfVo6eB3j9/M7L0c/GZmmcki+D3UY2bWo6WD36dzmpm9V0sH/8iRMGKEg9/MrFlLBz/0zNdjZmZJywf/2LEe4zcza9bywe8ev5nZlhz8ZmaZcfCbmWWm5YPfY/xmZlsq89aLl0laU9xmsfd7X5UUkkq/0bp7/GZmWyqzx385MK/3Skn7A8cDq0ps+/cc/GZmWyot+CNiMfByH2/9I3AuUNpN1puNHevgNzNrVukYv6QTgWcj4sEBbDtfUpekru7u7kG3OW4cbNwIGzYM+iPMzFpKZcEvaTTwTeBbA9k+IhZERGdEdHZ0dAy6Xc/QaWa2pSp7/P8FmA48KOl3wGRgiaS9y2zUwW9mtqW2qhqKiOXAXo3XRfh3RsTaMtv1XbjMzLZU5umcC4G7gBmSVks6q6y2tsY9fjOzLZXW44+IU7fx/rSy2m7m4Dcz21IWV+6Cg9/MrKHlg9+3XzQz21I2we8ev5lZ4uA3M8tMywf/yJEwfLiD38ysoeWDX0q9fo/xm5klLR/84Bk6zcyaZRH8nqHTzKxHFsHvHr+ZWY9sgt9j/GZmSRbB76EeM7MeWQS/h3rMzHpkE/we6jEzS7IJfvf4zcySLIJ/7FhYvz7de9fMLHdZBL/n6zEz61HmHbguk7RG0oqmdd+R9IikZZJ+JmlCWe0389TMZmY9yuzxXw7M67Xul8ChETETeAz4Ront/55vxmJm1qO04I+IxcDLvdbdEhGbipd3A5PLar+Zh3rMzHrUOcb/OeD/9fempPmSuiR1dXd371BDDn4zsx61BL+k84FNwFX9bRMRCyKiMyI6Ozo6dqg9j/GbmfVoq7pBSWcCJwBzIiKqaNNj/GZmPSoNfknzgHOB/xYRb1XVrod6zMx6lHk650LgLmCGpNWSzgL+CRgH/FLSUkn/t6z2m3mox8ysR2k9/og4tY/Vl5bV3tbsvjsMG+Yev5kZZHLlruSpmc3MGrIIfvBEbWZmDVkFv8f4zcwyCn4P9ZiZJdkEv4d6zMwSB7+ZWWayCf6xYz3Gb2YGGQW/e/xmZomD38wsM9kE//jx8M476d67ZmY5yyb429vT40sv1VuHmVndsgv+tWvrrcPMrG4OfjOzzDj4zcwy4+A3M8tMNsH/vvelRwe/meWuzDtwXSZpjaQVTev2lPRLSY8XjxPLar+3ESPSKZ0OfjPLXZk9/suBeb3WnQfcFhEHArcVryvT3u7gNzMrLfgjYjHwcq/VJwJXFM+vAP60rPb74uA3M6t+jH9SRDxfPH8BmNTfhpLmS+qS1NXd3T0kjbe3+wIuM7PaftyNiABiK+8viIjOiOjs6OgYkjbd4zczqz74X5S0D0DxuKbKxh38ZmbVB/8NwBnF8zOA66tsvL0d3norLWZmuSrzdM6FwF3ADEmrJZ0FXAD8saTHgbnF68o0zuX3OL+Z5aytrA+OiFP7eWtOWW1uS/PVu/vvX1cVZmb1yubKXfC0DWZm4OA3M8uOg9/MLDNZBf/EiSA5+M0sb1kFf1tbCn8Hv5nlLKvgB0/bYGaWZfC7x29mOXPwm5llxsFvZpaZbIM/+p0X1MystWUZ/OvXw5tv1l2JmVk9sgx+8HCPmeXLwW9mlpnsgr8xNbOD38xylV3wu8dvZrkbUPBLOkfSHkoulbRE0vFlF1cGB7+Z5W6gPf7PRcTrwPHAROA0duDuWZK+LOkhSSskLZQ0arCftb0mTIBhwzxtg5nla6DBr+LxE8CPI+KhpnXbRdJ+wNlAZ0QcCgwHThnMZw3GsGFpnN89fjPL1UCD/35Jt5CCf5GkccDmHWi3DdhdUhswGnhuBz5ru/nqXTPL2UDvuXsWMBv4bUS8JWlP4LODaTAinpV0EbAKeBu4JSJu6b2dpPnAfIApU6YMpql+OfjNLGcD7fEfDTwaEa9K+gzwv4DXBtOgpInAicB0YF9gTPGZW4iIBRHRGRGdHR0dg2mqXw5+M8vZQIP/YuAtSbOArwJPAj8aZJtzgaciojsiNgLXAccM8rMGxcFvZjkbaPBviogg9dT/KSJ+CIwbZJurgKMkjZYkYA6wcpCfNSieqM3McjbQ4F8n6Ruk0zh/IWkYMGIwDUbEPcA1wBJgeVHDgsF81mC1t8OmTfDqq1W2ama2cxho8J8MrCedz/8CMBn4zmAbjYj/HREHR8ShEXFaRKwf7GcNxuTJ6XH16ipbNTPbOQwo+IuwvwoYL+kE4J2IGOwYf+2mTk2PTz9dbx1mZnUY6JQNfwHcC/x34C+AeyR9qszCytQ4O9TBb2Y5Guh5/OcDR0bEGgBJHcCtpLH6Xc6kSbDbbrBqVd2VmJlVb6Bj/MMaoV94aTv+7U5n2LDU63eP38xyNNAe/82SFgELi9cnAzeVU1I1HPxmlqsBBX9EfF3SScCxxaoFEfGz8soq39SpsGhR3VWYmVVvoD1+IuJa4NoSa6nU1Knw/POwYUMa7zczy8VWg1/SOqCv61sFRETsUUpVFZgyJV25u3o1vP/9dVdjZladrQZ/RAx2WoadXvO5/A5+M8vJLntmzo7yRVxmlqtsg78xbYPP5Tez3GQb/CNHwj77uMdvZvnJNvjB5/KbWZ6yDv6pUz3UY2b5cfCvgs07ctt4M7NdTNbBP2UKrF8Pa9Zse1szs1ZRS/BLmiDpGkmPSFop6eg66mic0unhHjPLSV09/u8DN0fEwcAsKr7nboPP5TezHA14rp6hImk88GHgTICI2ABsqLoO8A1ZzCxPdfT4pwPdwL9JekDSJZLG9N5I0nxJXZK6uru7SylkwgTYYw8P9ZhZXuoI/jbgCODiiDgceBM4r/dGEbEgIjojorOjo6O0YqZOdY/fzPJSR/CvBlZHxD3F62tIfwhq4Yu4zCw3lQd/RLwAPCNpRrFqDvBw1XU0+CIuM8tN5T/uFr4IXCVpN+C3wGdrqoMpU+CVV2DdOhjXspNQm5n1qCX4I2Ip0FlH27015uJ/4gk4/PB6azEzq0LWV+4CHHZYely+vN46zMyqkn3wH3AAjBoFy5bVXYmZWTWyD/62NvjAB+DBB+uuxMysGtkHP8DMme7xm1k+HPyk4F+zBl58se5KzMzK5+AHZs1Kj+71m1kOHPz0nNnj4DezHDj4gfZ22HdfB7+Z5cHBX/APvGaWCwd/YeZMePhh2Lix7krMzMrl4C/MnAkbNsCjj9ZdiZlZuRz8hZkz06OHe8ys1Tn4CwcfDCNGOPjNrPU5+AsjRsAhhzj4zaz1Ofib+MweM8uBg7/JzJnw7LPw0kt1V2JmVp7agl/ScEkPSLqxrhp6mz07Pd53X61lmJmVqs4e/znAyhrbf4+jj4bddoPbb6+7EjOz8tQS/JImA38CXFJH+/0ZMyaF/6231l2JmVl56urxfw84F9hcU/v9mjsXli6FtWvrrsTMrByVB7+kE4A1EXH/NrabL6lLUld3d3dF1cGcORABd9xRWZNmZpWqo8d/LPBJSb8DrgY+KunK3htFxIKI6IyIzo6OjsqKO/JIGDcObrutsibNzCpVefBHxDciYnJETANOAW6PiM9UXUd/2trguOM8zm9mrcvn8fdh7lx48kl4+um6KzEzG3q1Bn9E/CoiTqizhr7MmZMePdxjZq3IPf4+HHII7L23h3vMrDU5+PsgpV7/bbelM3zMzFqJg78fc+fCmjWwfHndlZiZDS0Hfz8+9jEYNgx+8pO6KzEzG1oO/n7ssw8cfzxccQW8+27d1ZiZDR0H/1aceSasXu2reM2stTj4t+LEE2H8+NTrNzNrFQ7+rRg1Ck49Fa69Fl5/ve5qzMyGhoN/G848E95+G37607orMTMbGg7+bfjgB2HGDLj88rorMTMbGg7+bZBSr//OO+Hxx+uuxsxsxzn4B+D002HECPjud+uuxMxsxzn4B2DffeGv/gouvRSeeqruaszMdoyDf4C++c10Je/f/V3dlZiZ7RgH/wDttx/89V+nc/ofe6zuaszMBs/Bvx3OOy+d2//tb9ddiZnZ4Dn4t8Nee8HZZ8PChbBiRd3VmJkNTuXBL2l/SXdIeljSQ5LOqbqGHfH1r8OECTB/vidvM7NdUx09/k3AVyPiEOAo4G8kHVJDHYOy557wwx/CXXfBRRfVXY2Z2farPPgj4vmIWFI8XwesBParuo4dccop8KlPwbe+5Ru1mNmup9YxfknTgMOBe/p4b76kLkld3d3dlde2NRJcfHEa8jn9dNiwoe6KzMwGrrbglzQWuBb4UkS8Z+7LiFgQEZ0R0dnR0VF9gdvQ3g7/+q+wdGka9zcz21XUEvySRpBC/6qIuK6OGobCJz8JX/oS/OAH8L3v1V2NmdnAtFXdoCQBlwIrI2KXn/3mootg1Sr4yldg//3hpJPqrsjMbOvq6PEfC5wGfFTS0mL5RA11DInhw+HKK+Goo+DTn4Zf/7ruiszMtq7yHn9E3Amo6nbLtPvucMMN8KEPwcc+lu7Y9fGP112VmVnffOXuEGlvh8WL4Q/+II39X3ll3RWZmfXNwT+E9toL7rgDPvxhOO00+Pu/h82b667KzGxLDv4htscecNNN6Sbt558PJ5wAO9llCGaWOQd/CUaOhKuugn/+Z7j9dpg9G371q7qrMjNLHPwlkeALX4C774YxY+AjH4G//Et46aW6KzOz3Dn4SzZ7NjzwAJx7brqJy8EHw2WXeWZPM6uPg78CY8bAhRfCkiVw0EFw1llw2GFw3XUQUXd1ZpYbB3+FDjsM7rwTrrkmBf5JJ0FnJ1x9NWzaVHd1ZpYLB3/FpBT4y5enIZ833khnAB1wAPzDP8DatXVXaGatzsFfk7Y2+OxnYeVKuP56mDIFvva1dFP3k0+GRYv8LcDMyuHgr9mwYelK38WLYdmydCbQrbfCvHmwzz7w+c+nU0I3bqy7UjNrFQ7+nchhh6XpnZ97Lv3wO3cu/PjHMGcOdHSkbwI/+hE8+2zdlZrZrkyxC5xW0tnZGV1dXXWXUYu33krDPr/4RVpeeCGtnzEjXRtw7LFwzDEwfXr6/cDMrEHS/RHR+Z71Dv5dx+bN8OCDaT6g229Pw0Pr1qX3Jk1KZwj94R/CEUfArFnpd4Nh/k5nli0Hfwt691146CH4zW/SsmRJ+rG4MTHc2LFw6KFpxtAZM9Jy4IHp28Ho0fXWbmblc/Bn4s0307eCFSvSsnw5PPJIzxBRw957w7Rp6VvBlCnp7mH77tuzTJqU7jNgZruu/oK/8huxFMXMA74PDAcuiYgL6qijFY0Zk8b8jzlmy/WvvQaPPQZPPtmzrFqVppO4/npYv/69n7XHHmmq6Y6OdL+B9nbYc8+0TJyYlgkTYPz4tG1jGTMmna5qZjunOu65Oxz4IfDHwGrgPkk3RMTDVdeSk/Hj4cgj09JbRLpw7Lnn0hlDzz8PL77Ys6xdm/5ILFkCr7ySfnDellGj0lDTmDE9y+jR6VvE6NHp/d13T4+jRqUZTRvLbrv1PDaWESN6lra2nsfey/DhPY/Ny7BhWz5vLL1fS/6R3FpfHf2yDwJPRMRvASRdDZwIOPhrIqVefUdH+lF4W955J/0BeO01ePXVtLz+es/yxhtpWbcu/ZF48820vP12mp30mWfSZ7zzTlq3fn1adqYL1hp/BHo/Npber/taoP/XfT1v2Nr67XnebCDbbOu97dmmjH+7M6pif/7lX9JtXYdSHcG/H/BM0+vVwH/tvZGk+cB8gClTplRTmQ3IqFHp4rJ99hnaz920CTZsSMv69emitcbrjRt7Xm/a1LNs3Jh+5G5+3njdeP7uu+kH78bziC2fN95rPN+8+b3PG6/7et7XAv2/7ut5w9bWb8/zZgPZZlvvbc82ZfzbnVFV+zNmzNB/5k47EhsRC4AFkH7crbkcq0BjuMZnHJmVq46zvJ8F9m96PblYZ2ZmFagj+O8DDpQ0XdJuwCnADTXUYWaWpcqHeiJik6S/BRaRTue8LCIeqroOM7Nc1TLGHxE3ATfV0baZWe48k4uZWWYc/GZmmXHwm5llxsFvZpaZXWJ2TkndwNOD/OftQI63MM9xv3PcZ8hzv3PcZ9j+/Z4aER29V+4Swb8jJHX1NS1pq8txv3PcZ8hzv3PcZxi6/fZQj5lZZhz8ZmaZySH4F9RdQE1y3O8c9xny3O8c9xmGaL9bfozfzMy2lEOP38zMmjj4zcwy09LBL2mepEclPSHpvLrrKYOk/SXdIelhSQ9JOqdYv6ekX0p6vHicWHetQ03ScEkPSLqxeD1d0j3F8f73YtrvliJpgqRrJD0iaaWko1v9WEv6cvH/9gpJCyWNasVjLekySWskrWha1+exVfKDYv+XSTpie9pq2eBvuqn7x4FDgFMlHVJvVaXYBHw1Ig4BjgL+ptjP84DbIuJA4Lbidas5B1jZ9PpC4B8j4gDgFeCsWqoq1/eBmyPiYGAWaf9b9lhL2g84G+iMiENJU7mfQmse68uBeb3W9XdsPw4cWCzzgYu3p6GWDX6abuoeERuAxk3dW0pEPB8RS4rn60hBsB9pX68oNrsC+NNaCiyJpMnAnwCXFK8FfBS4ptikFfd5PPBh4FKAiNgQEa/S4seaNH387pLagNHA87TgsY6IxcDLvVb3d2xPBH4Uyd3ABEkDvgt2Kwd/Xzd136+mWiohaRpwOHAPMCkini/eegGYVFddJfkecC6wuXj9PuDViNhUvG7F4z0d6Ab+rRjiukTSGFr4WEfEs8BFwCpS4L8G3E/rH+uG/o7tDuVbKwd/ViSNBa4FvhQRrze/F+mc3ZY5b1fSCcCaiLi/7loq1gYcAVwcEYcDb9JrWKcFj/VEUu92OrAvMIb3DodkYSiPbSsHfzY3dZc0ghT6V0XEdcXqFxtf/YrHNXXVV4JjgU9K+h1pCO+jpLHvCcVwALTm8V4NrI6Ie4rX15D+ELTysZ4LPBUR3RGxEbiOdPxb/Vg39HdsdyjfWjn4s7ipezG2fSmwMiK+2/TWDcAZxfMzgOurrq0sEfGNiJgcEdNIx/X2iPg0cAfwqWKzltpngIh4AXhG0oxi1RzgYVr4WJOGeI6SNLr4f72xzy19rJv0d2xvAE4vzu45CnitaUho2yKiZRfgE8BjwJPA+XXXU9I+foj09W8ZsLRYPkEa874NeBy4Fdiz7lpL2v/jgBuL5+8H7gWeAH4KjKy7vhL2dzbQVRzvnwMTW/1YA98GHgFWAD8GRrbisQYWkn7H2Ej6dndWf8cWEOmsxSeB5aSzngbclqdsMDPLTCsP9ZiZWR8c/GZmmXHwm5llxsFvZpYZB7+ZWWYc/JYFSb8pHqdJ+h9D/Nnf7Ksts52VT+e0rEg6DvhaRJywHf+mLXrmhenr/TciYuwQlGdWCff4LQuS3iieXgD8kaSlxTzvwyV9R9J9xbzm/7PY/jhJv5Z0A+lKUST9XNL9xdzw84t1F5Bmjlwq6armtoqrKr9TzCO/XNLJTZ/9q6Z59a8qrkpF0gVK91ZYJumiKv8bWT7atr2JWUs5j6YefxHgr0XEkZJGAv8p6ZZi2yOAQyPiqeL15yLiZUm7A/dJujYizpP0txExu4+2/px0pe0soL34N4uL9w4HPgA8B/wncKyklcCfAQdHREiaMLS7bpa4x2+5O54058lS0nTW7yPd3ALg3qbQBzhb0oPA3aQJsg5k6z4ELIyIdyPiReA/gCObPnt1RGwmTbMxjTTl8DvApZL+HHhrB/fNrE8OfsudgC9GxOximR4RjR7/m7/fKP02MBc4OiJmAQ8Ao3ag3fVNz98FGr8jfJA06+YJwM078Plm/XLwW27WAeOaXi8CvlBMbY2kg4qbm/Q2HnglIt6SdDDpNpcNGxv/vpdfAycXvyN0kO6edW9/hRX3VBgfETcBXyYNEZkNOY/xW26WAe8WQzaXk+bxnwYsKX5g7abv2/jdDHy+GId/lDTc07AAWCZpSaTpoRt+BhwNPEiaQfXciHih+MPRl3HA9ZJGkb6JfGVQe2i2DT6d08wsMx7qMTPLjIPfzCwzDn4zs8w4+M3MMuPgNzPLjIPfzCwzDn4zs8z8f5Ck1FGGK51gAAAAAElFTkSuQmCC
 "
 >
 </div>
@@ -16853,7 +16929,12 @@ Show the results, goodness of fit and plot cost graph</p>
 <div class="prompt input_prompt">In&nbsp;[77]:</div><div class="inner_cell">
     <div class="input_area">
       <div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">normal_equation</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
+    <span class="c1">#print(X.shape)</span>
+    <span class="c1">#print(y.shape)</span>
     <span class="n">theta</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">inv</span><span class="p">(</span><span class="n">X</span><span class="o">.</span><span class="n">T</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">X</span><span class="p">))</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">X</span><span class="o">.</span><span class="n">T</span><span class="p">)</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">y</span><span class="p">)</span>
+    <span class="c1">#print((X.T.dot(X)).shape)</span>
+    <span class="c1">#print(np.linalg.inv(X.T.dot(X)).shape)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">y</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
     <span class="k">return</span> <span class="n">theta</span>
 </pre></div>
 
@@ -16866,7 +16947,8 @@ Show the results, goodness of fit and plot cost graph</p>
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[78]:</div><div class="inner_cell">
     <div class="input_area">
-      <div class=" highlight hl-ipython3"><pre><span></span><span class="n">theta_norm</span> <span class="o">=</span> <span class="n">normal_equation</span><span class="p">(</span><span class="n">X</span><span class="p">,</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">y</span><span class="p">])</span><span class="o">.</span><span class="n">T</span><span class="p">)</span>
+      <div class=" highlight hl-ipython3"><pre><span></span><span class="n">theta_norm</span> <span class="o">=</span> <span class="n">normal_equation</span><span class="p">(</span><span class="n">X</span><span class="p">,</span><span class="n">y</span><span class="p">)</span>
+<span class="c1">#print(y.shape)</span>
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;theta from normal equation:&quot;</span><span class="p">,</span> <span class="n">theta_norm</span><span class="o">.</span><span class="n">T</span><span class="p">)</span>
 <span class="n">y_norm_predicted</span> <span class="o">=</span>  <span class="n">h</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">theta_norm</span><span class="p">)</span>
 <span class="n">r_norm_square</span> <span class="o">=</span> <span class="n">goodness_of_fit</span><span class="p">(</span><span class="n">y</span><span class="p">,</span> <span class="n">y_norm_predicted</span><span class="o">.</span><span class="n">T</span><span class="p">)</span>
@@ -16887,13 +16969,26 @@ Show the results, goodness of fit and plot cost graph</p>
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>theta from normal equation: [[-8.32667268e-17  8.84765988e-01 -5.31788197e-02]]
-r_square: 0.7329450180289143
+<pre>(47, 1)
+theta from normal equation: [[ 3.81639165e-17 -1.89084859e-16  1.00000000e+00]]
+r_square: -93.00000000000004
 </pre>
 </div>
 </div>
 
 </div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div><div class="inner_cell">
+    <div class="input_area">
+      <div class=" highlight hl-ipython3"><pre><span></span> 
+</pre></div>
+
+    </div>
+  </div>
 </div>
 
 </div>
