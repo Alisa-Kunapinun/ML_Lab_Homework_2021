@@ -13531,6 +13531,9 @@ span.nbgrader-label {
             
           
             
+            
+          
+            
             <li><a href="#cell-3f75014dc83a1372">Test cell</a> (Score: 3.0 / 5.0)</li>
             
             
@@ -16690,8 +16693,15 @@ gradient_per_iter [[ 0.00000000e+00 -1.72082220e-14  8.75724041e-16]\
 <span class="c1"># parameters for a linear regression model</span>
 
 <span class="k">def</span> <span class="nf">normal_equation</span><span class="p">(</span><span class="n">X</span><span class="p">,</span><span class="n">y</span><span class="p">):</span>
-    <span class="n">theta</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">matmul</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">matmul</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">inv</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">matmul</span><span class="p">(</span><span class="n">X</span><span class="o">.</span><span class="n">T</span><span class="p">,</span> <span class="n">X</span><span class="p">)),</span><span class="n">X</span><span class="o">.</span><span class="n">T</span><span class="p">),</span><span class="n">y</span><span class="p">)</span>
-    <span class="k">return</span> <span class="n">theta</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">X</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">y</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+    <span class="n">v1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">X</span><span class="o">.</span><span class="n">T</span><span class="p">,</span> <span class="n">X</span><span class="p">)</span>
+    <span class="n">v2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">inv</span><span class="p">(</span><span class="n">v1</span><span class="p">),</span><span class="n">X</span><span class="o">.</span><span class="n">T</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">v1</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">v2</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+    <span class="n">theta</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">v2</span><span class="p">,</span><span class="n">y</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">theta</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">theta</span><span class="p">[:,</span><span class="mi">0</span><span class="p">]</span>
 </pre></div>
 
       </div>
@@ -16703,10 +16713,22 @@ gradient_per_iter [[ 0.00000000e+00 -1.72082220e-14  8.75724041e-16]\
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div><div class="inner_cell">
+    <div class="input_area">
+      <div class=" highlight hl-ipython3"><pre><span></span> 
+</pre></div>
+
+    </div>
+  </div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
 <div class="prompt input_prompt">In&nbsp;[73]:</div><div class="inner_cell">
     <div class="input_area">
       <div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#my function equation takes &#39;y&#39; directly instead of having to put transpose</span>
-
+<span class="c1">#mine</span>
 <span class="n">theta_norm</span> <span class="o">=</span> <span class="n">normal_equation</span><span class="p">(</span><span class="n">X</span><span class="p">,</span><span class="n">y</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;theta from normal equation:&quot;</span><span class="p">,</span> <span class="n">theta_norm</span><span class="o">.</span><span class="n">T</span><span class="p">)</span>
 <span class="n">y_norm_predicted</span> <span class="o">=</span>  <span class="n">h</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">theta_norm</span><span class="p">)</span>
@@ -16728,9 +16750,37 @@ gradient_per_iter [[ 0.00000000e+00 -1.72082220e-14  8.75724041e-16]\
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>theta from normal equation: [-8.32667268e-17  8.84765988e-01 -5.31788197e-02]
-r_square: 0.7329450180289143
+<pre>(47, 3)
+(47,)
+(3, 3)
+(3, 47)
+(3,)
 </pre>
+</div>
+</div>
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_text output_error">
+<pre>
+<span class="ansi-red-fg">---------------------------------------------------------------------------</span>
+<span class="ansi-red-fg">IndexError</span>                                Traceback (most recent call last)
+<span class="ansi-green-fg">&lt;ipython-input-73-a9e6b9f5d7ab&gt;</span> in <span class="ansi-cyan-fg">&lt;module&gt;</span>
+<span class="ansi-green-intense-fg ansi-bold">      1</span> <span class="ansi-red-fg">#my function equation takes &#39;y&#39; directly instead of having to put transpose</span>
+<span class="ansi-green-intense-fg ansi-bold">      2</span> <span class="ansi-red-fg">#mine</span>
+<span class="ansi-green-fg">----&gt; 3</span><span class="ansi-red-fg"> </span>theta_norm <span class="ansi-blue-fg">=</span> normal_equation<span class="ansi-blue-fg">(</span>X<span class="ansi-blue-fg">,</span>y<span class="ansi-blue-fg">)</span>
+<span class="ansi-green-intense-fg ansi-bold">      4</span> print<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">&#34;theta from normal equation:&#34;</span><span class="ansi-blue-fg">,</span> theta_norm<span class="ansi-blue-fg">.</span>T<span class="ansi-blue-fg">)</span>
+<span class="ansi-green-intense-fg ansi-bold">      5</span> y_norm_predicted <span class="ansi-blue-fg">=</span>  h<span class="ansi-blue-fg">(</span>X<span class="ansi-blue-fg">,</span> theta_norm<span class="ansi-blue-fg">)</span>
+
+<span class="ansi-green-fg">&lt;ipython-input-72-b3308de19611&gt;</span> in <span class="ansi-cyan-fg">normal_equation</span><span class="ansi-blue-fg">(X, y)</span>
+<span class="ansi-green-intense-fg ansi-bold">     11</span>     theta <span class="ansi-blue-fg">=</span> np<span class="ansi-blue-fg">.</span>dot<span class="ansi-blue-fg">(</span>v2<span class="ansi-blue-fg">,</span>y<span class="ansi-blue-fg">)</span>
+<span class="ansi-green-intense-fg ansi-bold">     12</span>     print<span class="ansi-blue-fg">(</span>theta<span class="ansi-blue-fg">.</span>shape<span class="ansi-blue-fg">)</span>
+<span class="ansi-green-fg">---&gt; 13</span><span class="ansi-red-fg">     </span><span class="ansi-green-fg">return</span> theta<span class="ansi-blue-fg">[</span><span class="ansi-blue-fg">:</span><span class="ansi-blue-fg">,</span><span class="ansi-cyan-fg">0</span><span class="ansi-blue-fg">]</span>
+
+<span class="ansi-red-fg">IndexError</span>: too many indices for array: array is 1-dimensional, but 2 were indexed</pre>
 </div>
 </div>
 
@@ -16775,8 +16825,13 @@ r_square: 0.7329450180289143
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>theta from normal equation: [[-8.32667268e-17  8.84765988e-01 -5.31788197e-02]]
-r_square: -80.44841584735899
+<pre>(47, 3)
+(47, 1)
+(3, 3)
+(3, 47)
+(3, 1)
+theta from normal equation: [-8.32667268e-17  8.84765988e-01 -5.31788197e-02]
+r_square: 0.7329450180289143
 </pre>
 </div>
 </div>
@@ -16791,13 +16846,13 @@ r_square: -80.44841584735899
 <span class="ansi-red-fg">---------------------------------------------------------------------------</span>
 <span class="ansi-red-fg">AssertionError</span>                            Traceback (most recent call last)
 <span class="ansi-green-fg">&lt;ipython-input-74-d8c9d94f81c3&gt;</span> in <span class="ansi-cyan-fg">&lt;module&gt;</span>
+<span class="ansi-green-intense-fg ansi-bold">      5</span> print<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">&#34;r_square:&#34;</span><span class="ansi-blue-fg">,</span> r_norm_square<span class="ansi-blue-fg">)</span>
 <span class="ansi-green-intense-fg ansi-bold">      6</span> <span class="ansi-red-fg">### BEGIN HIDDEN TESTS</span>
-<span class="ansi-green-intense-fg ansi-bold">      7</span> <span class="ansi-green-fg">assert</span> np<span class="ansi-blue-fg">.</span>array_equal<span class="ansi-blue-fg">(</span>np<span class="ansi-blue-fg">.</span>round<span class="ansi-blue-fg">(</span>theta_norm<span class="ansi-blue-fg">.</span>T<span class="ansi-blue-fg">,</span> <span class="ansi-cyan-fg">5</span><span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">,</span> np<span class="ansi-blue-fg">.</span>round<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">[</span><span class="ansi-blue-fg">[</span><span class="ansi-blue-fg">-</span><span class="ansi-cyan-fg">7.90434550e-17</span><span class="ansi-blue-fg">,</span><span class="ansi-cyan-fg">8.84765988e-01</span><span class="ansi-blue-fg">,</span><span class="ansi-blue-fg">-</span><span class="ansi-cyan-fg">5.31788197e-02</span><span class="ansi-blue-fg">]</span><span class="ansi-blue-fg">]</span><span class="ansi-blue-fg">,</span> <span class="ansi-cyan-fg">5</span><span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">,</span> <span class="ansi-blue-fg">&#34;the data result in theta is incorrect&#34;</span>
-<span class="ansi-green-fg">----&gt; 8</span><span class="ansi-red-fg"> </span><span class="ansi-green-fg">assert</span> np<span class="ansi-blue-fg">.</span>array_equal<span class="ansi-blue-fg">(</span>np<span class="ansi-blue-fg">.</span>round<span class="ansi-blue-fg">(</span>r_norm_square<span class="ansi-blue-fg">,</span> <span class="ansi-cyan-fg">5</span><span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">,</span> np<span class="ansi-blue-fg">.</span>round<span class="ansi-blue-fg">(</span><span class="ansi-cyan-fg">0.7329450180289143</span><span class="ansi-blue-fg">,</span> <span class="ansi-cyan-fg">5</span><span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">,</span> <span class="ansi-blue-fg">&#34;result of r_square is incorrect&#34;</span>
+<span class="ansi-green-fg">----&gt; 7</span><span class="ansi-red-fg"> </span><span class="ansi-green-fg">assert</span> np<span class="ansi-blue-fg">.</span>array_equal<span class="ansi-blue-fg">(</span>np<span class="ansi-blue-fg">.</span>round<span class="ansi-blue-fg">(</span>theta_norm<span class="ansi-blue-fg">.</span>T<span class="ansi-blue-fg">,</span> <span class="ansi-cyan-fg">5</span><span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">,</span> np<span class="ansi-blue-fg">.</span>round<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">[</span><span class="ansi-blue-fg">[</span><span class="ansi-blue-fg">-</span><span class="ansi-cyan-fg">7.90434550e-17</span><span class="ansi-blue-fg">,</span><span class="ansi-cyan-fg">8.84765988e-01</span><span class="ansi-blue-fg">,</span><span class="ansi-blue-fg">-</span><span class="ansi-cyan-fg">5.31788197e-02</span><span class="ansi-blue-fg">]</span><span class="ansi-blue-fg">]</span><span class="ansi-blue-fg">,</span> <span class="ansi-cyan-fg">5</span><span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">,</span> <span class="ansi-blue-fg">&#34;the data result in theta is incorrect&#34;</span>
+<span class="ansi-green-intense-fg ansi-bold">      8</span> <span class="ansi-green-fg">assert</span> np<span class="ansi-blue-fg">.</span>array_equal<span class="ansi-blue-fg">(</span>np<span class="ansi-blue-fg">.</span>round<span class="ansi-blue-fg">(</span>r_norm_square<span class="ansi-blue-fg">,</span> <span class="ansi-cyan-fg">5</span><span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">,</span> np<span class="ansi-blue-fg">.</span>round<span class="ansi-blue-fg">(</span><span class="ansi-cyan-fg">0.7329450180289143</span><span class="ansi-blue-fg">,</span> <span class="ansi-cyan-fg">5</span><span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">,</span> <span class="ansi-blue-fg">&#34;result of r_square is incorrect&#34;</span>
 <span class="ansi-green-intense-fg ansi-bold">      9</span> <span class="ansi-green-fg">assert</span> np<span class="ansi-blue-fg">.</span>round<span class="ansi-blue-fg">(</span>r_norm_square<span class="ansi-blue-fg">,</span> <span class="ansi-cyan-fg">5</span><span class="ansi-blue-fg">)</span> <span class="ansi-blue-fg">==</span> np<span class="ansi-blue-fg">.</span>round<span class="ansi-blue-fg">(</span><span class="ansi-cyan-fg">0.7329450180289143</span><span class="ansi-blue-fg">,</span> <span class="ansi-cyan-fg">5</span><span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">,</span> <span class="ansi-blue-fg">&#34;result of r_square is incorrect&#34;</span>
-<span class="ansi-green-intense-fg ansi-bold">     10</span> <span class="ansi-red-fg">### END HIDDEN TESTS</span>
 
-<span class="ansi-red-fg">AssertionError</span>: result of r_square is incorrect</pre>
+<span class="ansi-red-fg">AssertionError</span>: the data result in theta is incorrect</pre>
 </div>
 </div>
 
